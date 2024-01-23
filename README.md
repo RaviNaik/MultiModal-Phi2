@@ -16,3 +16,10 @@
 ![image](https://github.com/RaviNaik/ERA-CAPSTONE/assets/23289802/a6c143d0-c63c-4227-804f-93a4a8b74f7f)
 
 
+## Phi2 : Multimodal Finetuning
+### Details
+1. LLM Backbone: Phi2
+2. Vision Tower: clip-vit-large-patch14-336
+3. Audio Model: Whisper
+4. Pretraining Dataset: LAION-CC-SBU dataset with BLIP captions
+5. Finetuning Dataset: Instruct 150k dataset based on COCO
