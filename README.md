@@ -3,7 +3,7 @@
 ## Phi2 : Pretraining LLM from Scratch
 ### Details
 1. Model used: Microsoft Phi2
-2. Dataset used: Tiny Stories dataset & Realtime data from finetuned Phi2 model via Ollama
+2. Dataset used: Tiny Stories dataset(100k samples) & Realtime data(100k samples) from finetuned Phi2 model via Ollama
 3. Pretraining approach: Pretraining using QLoRA
 
 ### Design
@@ -21,7 +21,7 @@
 1. LLM Backbone: Phi2
 2. Vision Tower: clip-vit-large-patch14-336
 3. Audio Model: Whisper
-4. Pretraining Dataset: LAION-CC-SBU dataset with BLIP captions
+4. Pretraining Dataset: LAION-CC-SBU dataset with BLIP captions(200k samples)
 5. Finetuning Dataset: Instruct 150k dataset based on COCO
 
 ### Pretraining
