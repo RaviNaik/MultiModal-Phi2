@@ -8,7 +8,7 @@ multimodal_phi2 = MultiModalPhi2(
     modelname_or_path="RaviNaik/Llava-Phi2",
     temperature=0.2,
     max_new_tokens=1024,
-    device="cuda:0",
+    device="cpu",
 )
 
 
@@ -94,7 +94,9 @@ with gr.Blocks() as demo:
                 with gr.Row():
                     # Add audio
                     audio_upload = gr.Audio(source="upload", type="filepath")
-                    audio_mic = gr.Audio(source="microphone", type="filepath")
+                    audio_mic = gr.Audio(
+                        source="microphone", type="filepath", format="mp3"
+                    )
 
         with gr.Column(scale=8):
             with gr.Box():
@@ -123,4 +125,4 @@ with gr.Blocks() as demo:
         outputs=[prompt, image, audio_upload, audio_mic, chatbot],
     )
 
-demo.launch(server_name="0.0.0.0", server_port=8009)
+demo.launch(server_port=8881)

@@ -1,3 +1,5 @@
+import soundfile as sf
+import librosa
 import torch
 from transformers import (
     AutoTokenizer,
@@ -47,8 +49,14 @@ class WhisperWithProjection:
         # self.audio_language_connector = AudioLanguageConnector(projection_dim)
 
     def __call__(self, audio):
+        array, sampling_rate = sf.read(audio)
+        resampled_array = librosa.resample(
+            array,
+            orig_sr=sampling_rate,
+            target_sr=16000,
+        )
         input_features = self.processor(
-            audio["array"], sampling_rate=audio["sampling_rate"], return_tensors="pt"
+            resampled_array, sampling_rate=16000, return_tensors="pt"
         ).input_features
         # generate token ids
         predicted_ids = self.model.generate(input_features.to(self.device))
