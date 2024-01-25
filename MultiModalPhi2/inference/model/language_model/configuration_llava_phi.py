@@ -68,23 +68,23 @@ class LlavaPhiVisionConfig(PretrainedConfig):
     model_type = "llava_phi_clip_vision_model"
 
     def __init__(
-            self,
-            hidden_size=768,
-            intermediate_size=3072,
-            projection_dim=512,
-            num_hidden_layers=12,
-            num_attention_heads=12,
-            num_channels=3,
-            image_size=224,
-            patch_size=32,
-            hidden_act="quick_gelu",
-            layer_norm_eps=1e-5,
-            attention_dropout=0.0,
-            initializer_range=0.02,
-            initializer_factor=1.0,
-            mm_vision_select_feature="patch",
-            mm_vision_select_layer=-2,
-            **kwargs,
+        self,
+        hidden_size=768,
+        intermediate_size=3072,
+        projection_dim=512,
+        num_hidden_layers=12,
+        num_attention_heads=12,
+        num_channels=3,
+        image_size=224,
+        patch_size=32,
+        hidden_act="quick_gelu",
+        layer_norm_eps=1e-5,
+        attention_dropout=0.0,
+        initializer_range=0.02,
+        initializer_factor=1.0,
+        mm_vision_select_feature="patch",
+        mm_vision_select_layer=-2,
+        **kwargs,
     ):
         super().__init__(**kwargs)
 
@@ -105,16 +105,24 @@ class LlavaPhiVisionConfig(PretrainedConfig):
         self.mm_vision_select_layer = mm_vision_select_layer
 
     @classmethod
-    def from_pretrained(cls, pretrained_model_name_or_path: Union[str, os.PathLike], **kwargs) -> "PretrainedConfig":
+    def from_pretrained(
+        cls, pretrained_model_name_or_path: Union[str, os.PathLike], **kwargs
+    ) -> "PretrainedConfig":
         cls._set_token_in_kwargs(kwargs)
 
-        config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+        config_dict, kwargs = cls.get_config_dict(
+            pretrained_model_name_or_path, **kwargs
+        )
 
         # get the vision config dict if we are loading from CLIPConfig
         if config_dict.get("model_type") == "llava_phi-phi":
             config_dict = config_dict["vision_config"]
 
-        if "model_type" in config_dict and hasattr(cls, "model_type") and config_dict["model_type"] != cls.model_type:
+        if (
+            "model_type" in config_dict
+            and hasattr(cls, "model_type")
+            and config_dict["model_type"] != cls.model_type
+        ):
             logger.warning(
                 f"You are using a model of type {config_dict['model_type']} to instantiate a model of type "
                 f"{cls.model_type}. This is not supported for all configurations of models and can yield errors."
@@ -127,11 +135,7 @@ class ProjectorConfig(PretrainedConfig):
     model_type = "llava_phi_projector"
 
     def __init__(
-            self,
-            mm_projector_type="linear",
-            mm_hidden_size=768,
-            hidden_size=2560,
-            **kwargs
+        self, mm_projector_type="linear", mm_hidden_size=768, hidden_size=2560, **kwargs
     ):
         self.mm_projector_type = mm_projector_type
         self.mm_hidden_size = mm_hidden_size
@@ -139,16 +143,24 @@ class ProjectorConfig(PretrainedConfig):
         super().__init__(**kwargs)
 
     @classmethod
-    def from_pretrained(cls, pretrained_model_name_or_path: Union[str, os.PathLike], **kwargs) -> "PretrainedConfig":
+    def from_pretrained(
+        cls, pretrained_model_name_or_path: Union[str, os.PathLike], **kwargs
+    ) -> "PretrainedConfig":
         cls._set_token_in_kwargs(kwargs)
 
-        config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+        config_dict, kwargs = cls.get_config_dict(
+            pretrained_model_name_or_path, **kwargs
+        )
 
         # get the vision config dict if we are loading from CLIPConfig
         if config_dict.get("model_type") == "llava_phi-phi":
             config_dict = config_dict["projector_config"]
 
-        if "model_type" in config_dict and hasattr(cls, "model_type") and config_dict["model_type"] != cls.model_type:
+        if (
+            "model_type" in config_dict
+            and hasattr(cls, "model_type")
+            and config_dict["model_type"] != cls.model_type
+        ):
             logger.warning(
                 f"You are using a model of type {config_dict['model_type']} to instantiate a model of type "
                 f"{cls.model_type}. This is not supported for all configurations of models and can yield errors."
@@ -159,7 +171,7 @@ class ProjectorConfig(PretrainedConfig):
 
 DEFAULT_VISUAL_CONFIG = {
     "vision_tower": LlavaPhiVisionConfig().to_dict(),
-    "mm_projector": ProjectorConfig().to_dict()
+    "mm_projector": ProjectorConfig().to_dict(),
 }
 
 
