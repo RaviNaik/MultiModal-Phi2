@@ -57,5 +57,8 @@
 ![image](https://github.com/RaviNaik/ERA-CAPSTONE/assets/23289802/485a2806-81ac-4229-97ee-87f58af578bc)
 ![image](https://github.com/RaviNaik/ERA-CAPSTONE/assets/23289802/ae2c14c4-6949-4fff-b2fb-cb37a29eac33)
 
+#### Audio & Image:
+![image](https://github.com/RaviNaik/ERA-CAPSTONE/assets/23289802/2f4f65fc-a888-4ef8-98f9-04112477215d)
+
 
 
