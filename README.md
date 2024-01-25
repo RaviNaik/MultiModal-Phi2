@@ -26,10 +26,10 @@
 4. Pretraining Dataset: LAION-CC-SBU dataset with BLIP captions(200k samples)
 5. Finetuning Dataset: Instruct 150k dataset based on COCO
 
-### Approach
+### Design
 ![image](https://github.com/RaviNaik/ERA-CAPSTONE/assets/23289802/b09a77d9-0c70-4b65-89ac-e7771457cf27)
 
-### Design
+### Approach
 ![image](https://github.com/RaviNaik/ERA-CAPSTONE/assets/23289802/56df24cd-2681-4e17-ab64-9652f609b15f)
 
 ### Pretraining
