@@ -64,6 +64,9 @@
 **Question Asked: How many people are there in this image?**
 ![image](https://github.com/RaviNaik/ERA-CAPSTONE/assets/23289802/430310fc-1df9-459c-94f3-32d9691a1035)
 ![image](https://github.com/RaviNaik/ERA-CAPSTONE/assets/23289802/fd30a864-b289-469a-9c85-b6fd02f486a9)
+On HF Space:
+![image](https://github.com/RaviNaik/ERA-CAPSTONE/assets/23289802/efefee6e-98ee-4658-b2e9-f18d8f82a234)
+
 
 ### Possible Improvements / Future Scope:
 1. **Full Training:** Here I have pretrained using 200k samples of LAION-CC-SBU dataset with BLIP captions, though its giving good results, full dataset would make it still better.
