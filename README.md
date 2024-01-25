@@ -61,7 +61,9 @@
 ![image](https://github.com/RaviNaik/ERA-CAPSTONE/assets/23289802/ae2c14c4-6949-4fff-b2fb-cb37a29eac33)
 
 #### Audio & Image:
-![image](https://github.com/RaviNaik/ERA-CAPSTONE/assets/23289802/2f4f65fc-a888-4ef8-98f9-04112477215d)
+**Question Asked: How many people are there in this image?**
+![image](https://github.com/RaviNaik/ERA-CAPSTONE/assets/23289802/430310fc-1df9-459c-94f3-32d9691a1035)
+![image](https://github.com/RaviNaik/ERA-CAPSTONE/assets/23289802/fd30a864-b289-469a-9c85-b6fd02f486a9)
 
 
 
